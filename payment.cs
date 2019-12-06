@@ -15,8 +15,11 @@ namespace Assignment_5
         }
         //amount of THIS payment
         static double amount; 
+        this.amount = a;
+        
         // date of THIS payment
         static string paymentDate; 
+        this.paymentDate = d;
 
         ///<summary>
         /// returns the payment amount attribute
@@ -37,7 +40,8 @@ namespace Assignment_5
         ///</summary>
         public virtual bool verify()
         {
-            return false; 
+            Console.WriteLine ("Payment Verified . . .");
+            return true; 
         }
 
         ///<summary>
