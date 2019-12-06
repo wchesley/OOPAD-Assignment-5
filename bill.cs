@@ -1,3 +1,7 @@
+// Walker Chesley
+// Laith Alfaloujeh
+// Jeniece Calva
+
 using System;
 
 namespace Assignment_5
@@ -30,7 +34,12 @@ namespace Assignment_5
         ///</summary>
         public bool addPayment(Payment p)
         {
-            return p; 
+            if(p.verify())
+            {
+                //addpayment
+                return true;
+            } 
+            else return false;
         }
     }
 }
