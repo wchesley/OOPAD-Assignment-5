@@ -7,32 +7,28 @@ using System;
 
 namespace Assignment_5
 {
-     public abstract string GetPaymentType();
-
+    class Cash : Payment
     {
-      class Cash: Payment
-    }
 
+        double tenderdCash;
+        double change;
+
+        public Cash(double a, string d, double t) : base(a, d)
         {
-          double tenderdCash;
-          double change;
+
+            this.tenderdCash = t;
+
         }
-        public Cash(double a, string d, double t) : base(a,d)
-        {
-         
-          this.tenderdCash = t;
-         
-        }
-        
+
         public double CalcChange()
         {
-          return tenderdCash - GetAmount();
+            return tenderdCash - Payment.getAmount();
         }
 
-        public override string GetPaymentType()
+        public override string getPaymentType()
         {
-          return "Cash";
+            return "Cash";
         }
 
-        
-  }
+    }
+}
