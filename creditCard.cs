@@ -1,10 +1,14 @@
+// Walker Chesley
+// Laith Alfaloujeh
+// Jeniece Calva
+
 using System;
 
 namespace Assignment_5
 {
     class CreditCard: Payment
     {
-        public CreditCard(int amount, string ccnum, string cctype, string expdate, string ccholdername, string ccdate)
+        public CreditCard(int amount, string ccnum, string cctype, string expdate, string ccholdername, string purchaseDate)
         {
             CCNum = ccnum;
             expDate = expdate;
