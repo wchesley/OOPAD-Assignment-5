@@ -2,7 +2,7 @@ using System;
 
 namespace Assignment_5
 {
-    class Payment
+    abstract class Payment
     {
         //amount of THIS payment
         private double amount; 
@@ -26,17 +26,14 @@ namespace Assignment_5
         ///<summary>
         ///  writes to the console the message “Payment verified“, and returns true. Need to be overloaded by derived classes if needed. 
         ///</summary>
-        virtual bool verify()
+        public virtual bool verify()
         {
-
+            return false; 
         }
 
         ///<summary>
         /// has no implementation (abstract) in this class, and it need to be implemented in all derived classes. 
         ///</summary>
-        abstract string getPaymentType()
-        {
-
-        }
+        public abstract string getPaymentType(); 
     }
 }
