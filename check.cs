@@ -2,7 +2,7 @@ using System;
 
 namespace Assignment_5
 {
-    class Check
+    class Check: Payment
     {
         string bank; 
         string custName; 
@@ -19,9 +19,9 @@ namespace Assignment_5
         /// <summary>
         /// :overrides the base class abstract method. It returns the string “Check” that represents the payment type of this class 
         ///</summary>
-        getPaymentType()
+        public override string getPaymentType()
         {
-
+            return "Check";
         }
     }
 }

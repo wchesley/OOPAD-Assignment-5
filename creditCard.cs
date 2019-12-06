@@ -2,8 +2,15 @@ using System;
 
 namespace Assignment_5
 {
-    class CreditCard
+    class CreditCard: Payment
     {
+        public CreditCard(int amount, string ccnum, string cctype, string expdate, string ccholdername, string ccdate)
+        {
+            CCNum = ccnum;
+            expDate = expdate;
+            CHOlderName = ccholdername;
+            CType = cctype; 
+        }
         // credit card number 
         string CCNum;  
         // expiration date 
@@ -16,16 +23,17 @@ namespace Assignment_5
         ///<summary>
         ///overrides the base class method, it writes to the console the message "Credit card verified" and returns true;
         ///</summary>
-        verify()
+        public override bool verify()
         {
-
+            Console.WriteLine("Credit card verified");
+            return true; 
         }
          ///<summary>
         /// overrides the base class abstract method. It returns the string “Credit Card” that represents the payment type of this clas
         ///</summary>
-        getPaymentType()
+        public override string getPaymentType()
         {
-
+            return "Credit Card";
         }
     }
 }
