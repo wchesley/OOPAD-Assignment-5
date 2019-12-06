@@ -8,21 +8,26 @@ namespace Assignment_5
 {
     abstract class Payment
     {
+        public Payment(double Amount, string date)
+        {
+            amount = Amount;
+            paymentDate = date;
+        }
         //amount of THIS payment
-        private double amount; 
+        static double amount; 
         // date of THIS payment
-        private string paymentDate; 
+        static string paymentDate; 
 
         ///<summary>
         /// returns the payment amount attribute
         ///</summary>
-        public double getAmount()
+        public static double getAmount()
         {
             return amount; 
         }
 
 
-        public string getPaymentDate()
+        public static string getPaymentDate()
         {
             return paymentDate; 
         }

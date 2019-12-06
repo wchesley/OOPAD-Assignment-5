@@ -8,17 +8,26 @@ namespace Assignment_5
 {
     class Bill
     {
+        public Bill(string date, string desc, double Amount )
+        {
+            billDate = date;
+            description = desc;
+            amount = Amount;
+        }
         string billDate;
         string description;
         //bill total amount: 
-        double amoung; 
+        double amount; 
 
         ///<summary>
         ///  returns string contains all information in the bill including the payments. See the main() method and sample output to see what information is returned and then printed. 
         ///</summary>
         public string getBillInfo()
         {
-            return ""; 
+            string billInfo = $"Date:{billDate}";
+            billInfo += $"Description: {description}";
+            billInfo += $"Amount Due: {amount}";
+            return billInfo; 
         }
         
         ///<summary>
@@ -26,7 +35,7 @@ namespace Assignment_5
         ///</summary>
         public double getBalance()
         {
-            return 2.0; 
+            return amount = amount - Payment.getAmount(); 
         }
 
         ///<summary>
@@ -36,7 +45,7 @@ namespace Assignment_5
         {
             if(p.verify())
             {
-                //addpayment
+                getBalance();
                 return true;
             } 
             else return false;
