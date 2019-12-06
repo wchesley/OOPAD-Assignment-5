@@ -8,7 +8,7 @@ namespace Assignment_5
 {
     class Check: Payment
     {
-        public Check(int num, string bankName, string checkHolderName, string custAcc, string purchaseDate)
+        public Check(double Amount, string bankName, string checkHolderName, string custAcc, string purchaseDate)
         {
             bank = bankName;
             custName = checkHolderName;
