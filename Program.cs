@@ -1,4 +1,8 @@
-﻿using System;
+﻿// Walker Chesley
+// Laith Alfaloujeh
+// Jeniece Calva
+
+using System;
 
 namespace Assignment_5
 {
