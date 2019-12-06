@@ -1,9 +1,19 @@
+// Walker Chesley
+// Laith Alfaloujeh
+// Jeniece Calva
+
 using System;
 
 namespace Assignment_5
 {
     class Check: Payment
     {
+        public Check(int num, string bankName, string checkHolderName, string custAcc, string purchaseDate)
+        {
+            bank = bankName;
+            custName = checkHolderName;
+            accNum = custAcc;
+        }
         string bank; 
         string custName; 
         string accNum; 
@@ -11,9 +21,10 @@ namespace Assignment_5
         /// <summary>
         /// overrides the base class method, it writes to the console the message "Signature and account Balance verified" and returns true; 
         ///</summary>
-        verify()
+        public override bool verify()
         {
-
+            Console.WriteLine("Check");
+            return true; 
         }
 
         /// <summary>
