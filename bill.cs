@@ -3,6 +3,8 @@
 // Jeniece Calva
 
 using System;
+using System.Collections.Generic;
+
 
 namespace Assignment_5
 {
@@ -12,12 +14,15 @@ namespace Assignment_5
         {
             billDate = date;
             description = desc;
-            amount = Amount;
+            amounts = Amount;
         }
         string billDate;
         string description;
         //bill total amount: 
-        double amount; 
+        double amounts; 
+
+        List<Payment> payments = new List<Payment>();
+
 
         ///<summary>
         ///  returns string contains all information in the bill including the payments. See the main() method and sample output to see what information is returned and then printed. 
@@ -25,8 +30,11 @@ namespace Assignment_5
         public string getBillInfo()
         {
             string billInfo = $"Date:{billDate}";
-            billInfo += $"Description: {description}";
-            billInfo += $"Amount Due: {amount}";
+                foreach(var p in payments)
+                    {
+                        billInfo+=$"On {p.getPaymentDate()} payment with {p.getPaymentType()} the amount ${p.amounts} was processed.";
+                    }
+                    billInfo+=$" Total amount paid: {getAmountPaid()} Remaining Balance: {getBalance()}";
             return billInfo; 
         }
         
@@ -34,21 +42,37 @@ namespace Assignment_5
         ///  calculate the remaining balance by calculating the difference between the total of payments and the bill’s original amount
         ///</summary>
         public double getBalance()
+         {   
+        double total=0;
+        foreach(var a in payments)
         {
-            return amount = amount - Payment.getAmount(); 
+            total=total+getAmountPaid();
+            //return Total;
         }
+        return amounts - getAmountPaid();
+    }
 
+
+        public double getAmountPaid()
+        {
+        double total=0;
+        foreach(var a in payments)
+        {
+            total=total+a.getAmount();
+        }
+        return total;
+        } 
         ///<summary>
         ///  It calls verify() method first, and if verify is successful it adds the payment to the bill payments
         ///</summary>
         public bool addPayment(Payment p)
         {
-            if(p.verify())
+            if(p.verify()==true) 
             {
-                getBalance();
+                payments.Add(p);
                 return true;
-            } 
-            else return false;
-        }
+            }
+            return false;
+                }
     }
 }

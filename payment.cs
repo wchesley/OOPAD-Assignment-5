@@ -10,29 +10,27 @@ namespace Assignment_5
     {
         public Payment(double Amount, string date)
         {
-            amount = Amount;
-            paymentDate = date;
+            amounts = Amount;
+            paymentDates = date;
         }
         //amount of THIS payment
-        static double amount; 
-        this.amount = a;
+        public double amounts; 
         
         // date of THIS payment
-        static string paymentDate; 
-        this.paymentDate = d;
+        public string paymentDates; 
 
         ///<summary>
         /// returns the payment amount attribute
         ///</summary>
-        public static double getAmount()
+        public double getAmount()
         {
-            return amount; 
+            return amounts; 
         }
 
 
-        public static string getPaymentDate()
+        public string getPaymentDate()
         {
-            return paymentDate; 
+            return paymentDates; 
         }
 
         ///<summary>
