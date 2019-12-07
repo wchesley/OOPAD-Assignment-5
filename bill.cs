@@ -32,9 +32,9 @@ namespace Assignment_5
             string billInfo = $"Date:{billDate}";
                 foreach(var p in payments)
                     {
-                        billInfo+=$"On {p.getPaymentDate()} payment with {p.getPaymentType()} the amount ${p.amounts} was processed.";
+                        billInfo+=$"\nOn {p.getPaymentDate()} payment with {p.getPaymentType()} the amount ${p.amounts} was processed.";
                     }
-                    billInfo+=$" Total amount paid: {getAmountPaid()} Remaining Balance: {getBalance()}";
+                    billInfo+=$"\n Total amount paid: {getAmountPaid()}\n Remaining Balance: {getBalance()}";
             return billInfo; 
         }
         
