@@ -17,12 +17,15 @@ namespace Assignment_5
         {
 
             this.tenderdCash = t;
+            this.change=amounts-t;
+
 
         }
 
         public double CalcChange()
         {
-            return tenderdCash - Payment.getAmount();
+            this.change = this.tenderdCash - this.amounts;
+            return this.change;
         }
 
         public override string getPaymentType()

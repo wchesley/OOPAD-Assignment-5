@@ -8,7 +8,7 @@ namespace Assignment_5
 {
     class CreditCard: Payment
     {
-        public CreditCard(double amount, string ccnum, string cctype, string expdate, string ccholdername, string purchaseDate)
+        public CreditCard(double amount, string ccnum, string cctype, string expdate, string ccholdername, string purchaseDate): base (amount, purchaseDate)
         {
             CCNum = ccnum;
             expDate = expdate;
